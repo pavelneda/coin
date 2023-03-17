@@ -3,4 +3,12 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Main app")
+    return HttpResponse("Main page")
+
+
+def about(request):
+    return HttpResponse("about page")
+
+
+def depatments(request):
+    return HttpResponse("depatments page")
