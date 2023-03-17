@@ -1,2 +1,2 @@
 # coin
- Django app
+ Django app of online banking
