@@ -8,3 +8,9 @@ class Blog(models.Model):
     photo = models.ImageField(upload_to="photos/%Y/%m/%d/")
     text = models.TextField()
     data = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['data', 'title']
