@@ -1,8 +1,8 @@
 from django.db import models
 
-<<<<<<< Updated upstream
-# Create your models here.
-=======
+from credits.models import Credit
+from deposits.models import Deposit
+
 
 class User(models.Model):
     name = models.CharField(max_length=100)
@@ -28,4 +28,3 @@ class Card(models.Model):
 
     def __str__(self):
         return f'{self.number}'
->>>>>>> Stashed changes

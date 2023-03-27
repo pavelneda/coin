@@ -1,8 +1,4 @@
 from django.db import models
-<<<<<<< Updated upstream
-
-# Create your models here.
-=======
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Credit(models.Model):
@@ -17,4 +13,4 @@ class Credit(models.Model):
 
     class Meta:
         ordering = ['data', 'purpose']
->>>>>>> Stashed changes
+
