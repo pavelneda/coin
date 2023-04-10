@@ -7,5 +7,5 @@ def blogs(request):
 
 
 def blog(request, blog_id):
-    return HttpResponse(f'{blog_id} blog page')
+    return render(request, 'blogs/blog.html')
 
