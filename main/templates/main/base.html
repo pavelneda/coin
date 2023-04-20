@@ -1,7 +1,14 @@
 {% load static %}
 
 {% include "main/includes/header.html" %}
-
+<title>
+    {% block title %}
+        {% if title %}
+        {% else %}
+          Coin
+        {% endif %}
+    {% endblock %}
+</title>
 
 {% block content %}
 {% endblock %}
