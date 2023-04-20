@@ -10,10 +10,7 @@ def blogs(request):
 
 
 def blog(request, blog_id):
-<<<<<<< Updated upstream
-    return HttpResponse(f'{blog_id} blog page')
-=======
     blog = Blog.objects.get(pk=blog_id)
     return render(request, 'blogs/blog.html', {"blog": blog})
->>>>>>> Stashed changes
+
 
