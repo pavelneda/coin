@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Coin - Registration
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}" type="text/css"/>
+
+    <section class="site-section">
+        <div class="container">
+
+            <form class="authentification" method="post">
+                {% csrf_token %}
+
+                <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+                <label for="form.id_email" class="sr-only">Email address</label>
+                <input type="text" id="form.id_email" class="form-control" name="{{ form.email.html_name }}"
+                       placeholder="Email address" required autofocus>
+                {{ form.email.errors }}
+                <label for="form.id_username" class="sr-only">Login</label>
+                <input type="text" id="form.id_username" class="form-control" name="{{ form.username.html_name }}"
+                       placeholder="Login" required autofocus>
+                {{ form.username.errors }}
+                <label for="form.id_password" class="sr-only">Password</label>
+                <input type="password" id="form.id_password" class="form-control" placeholder="Password" required
+                       name="{{ form.password.html_name }}">
+                {{ form.password1.errors }}
+                <label for="form.id_password2" class="sr-only">Repeat password</label>
+                <input type="password" id="form.id_password2" class="form-control" placeholder="Repeat password"
+                       required
+                       name="{{ form.password2.html_name }}">
+                {{ form.password2.errors }}
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+
+            </form>
+
+        </div>
+    </section>
+{% endblock %}
