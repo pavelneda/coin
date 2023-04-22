@@ -1,0 +1,12 @@
+.authentification{
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.authentification .errorlist{
+    color: red;
+}
+
+.authentification .form-control{
+    margin-bottom: 0.5rem;
+}

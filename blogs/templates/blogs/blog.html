@@ -7,25 +7,26 @@
 {% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'blogs/css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'blogs/css/style.css' %}" type="text/css"/>
     <section class="site-section">
-      <div class="container">
+        <div class="container">
+            <div class="blog-content">
+                <div class="row mb-5" style="justify-content: center;">
+                    <div class="col-lg-6">
+                        <figure><img src="{{ blog.photo.url }}" alt="Free Website Template by Free-Template.co"
+                                     class="img-fluid">
+                            <figcaption>This is an image caption</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p class="lead">{{ blog.description }}</p>
+                <p>{{ blog.text }}</p>
 
-          <div class="blog-content">
-            <div class="row mb-5" style="justify-content: center;">
-              <div class="col-lg-6">
-                <figure><img src="{{ blog.photo.url }}" alt="Free Website Template by Free-Template.co" class="img-fluid">
-                  <figcaption>This is an image caption</figcaption></figure>
-              </div>
+                <div class="pt-5">
+                    <em class="meta mb-4">{{ blog.data }}</em>
+                </div>
+
             </div>
-            <p class="lead">{{ blog.description }}</p>
-            <p>{{ blog.text }}</p>
-
-            <div class="pt-5">
-                <em class="meta mb-4">{{ blog.data }}</em>
-            </div>
-
-          </div>
         </div>
     </section>
 {% endblock %}
