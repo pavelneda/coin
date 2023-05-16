@@ -15,17 +15,29 @@
                 {% csrf_token %}
 
                 <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+                <label for="form.id_first_name" class="sr-only">Fist name</label>
+                <input type="text" id="form.id_first_name" class="form-control" name="{{ form.first_name.html_name }}"
+                       placeholder="First name" required autofocus>
+                {{ form.first_name.errors }}
+                <label for="form.id_last_name" class="sr-only">Last name</label>
+                <input type="text" id="form.id_last_name" class="form-control" name="{{ form.last_name.html_name }}"
+                       placeholder="Last name" required autofocus>
+                {{ form.last_name.errors }}
                 <label for="form.id_email" class="sr-only">Email address</label>
                 <input type="text" id="form.id_email" class="form-control" name="{{ form.email.html_name }}"
                        placeholder="Email address" required autofocus>
                 {{ form.email.errors }}
+                <label for="form.id_phone" class="sr-only">Phone</label>
+                <input type="text" id="form.id_phone" class="form-control" name="{{ form.phone.html_name }}"
+                       placeholder="Phone" required autofocus>
+                {{ form.phone.errors }}
                 <label for="form.id_username" class="sr-only">Login</label>
                 <input type="text" id="form.id_username" class="form-control" name="{{ form.username.html_name }}"
                        placeholder="Login" required autofocus>
                 {{ form.username.errors }}
                 <label for="form.id_password" class="sr-only">Password</label>
                 <input type="password" id="form.id_password" class="form-control" placeholder="Password" required
-                       name="{{ form.password.html_name }}">
+                       name="{{ form.password1.html_name }}">
                 {{ form.password1.errors }}
                 <label for="form.id_password2" class="sr-only">Repeat password</label>
                 <input type="password" id="form.id_password2" class="form-control" placeholder="Repeat password"
