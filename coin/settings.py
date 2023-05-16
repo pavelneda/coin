@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'credits.apps.CreditConfig',
     'deposits.apps.DepositsConfig',
     'exchange.apps.ExchangeConfig',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,5 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+AUTH_USER_MODEL = 'account.User'

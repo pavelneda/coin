@@ -9,8 +9,10 @@ from account.forms import RegisterUserForm, LoginUserForm
 
 
 def account(request):
-    return render(request, 'account/account.html')
-
+    if request.user.is_authenticated:
+        return render(request, 'account/account.html')
+    else:
+        return redirect('signin')
 
 def logout_user(request):
     logout(request)
@@ -30,6 +32,7 @@ class RegisterUser(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('account')
+
 
 class LoginUser(LoginView):
     form_class = LoginUserForm
