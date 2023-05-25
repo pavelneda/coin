@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Coin - Transfer
+{% endblock %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}" type="text/css"/>
+    <section class="site-section">
+        <div class="container">
+            {% if request.user.is_authenticated %}
+                <div class="account">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="list-group list-group-light">
+                                <a href="{% url 'account' %}"
+                                   class="list-group-item list-group-item-action px-3 border-0"
+                                   aria-current="true">
+                                    Profile</a>
+                                <a href="#"
+                                   class="list-group-item list-group-item-action px-3 border-0 active">Transfer</a>
+                                <a href="{% url 'deposits' %}" class="list-group-item list-group-item-action px-3 border-0">Deposit</a>
+                                <a href="{% url 'logout' %}"
+                                   class="logout list-group-item list-group-item-action px-3 border-0">Logout</a>
+                            </div>
+                        </div>
+                        <div class="transfer col-9">
+                            <h3 class="transfer__title">Transfser to card</h3>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+
+                                <label for="form.id_number-card" class="sr-only">Number</label>
+                                <input type="text" id="form.id_number-card" class="form-control"
+                                       name="{{ form.number.html_name }}"
+                                       placeholder="Number of card" required autofocus>
+                                {{ form.number.errors }}
+                                <label for="form.id_sum" class="sr-only">Sum</label>
+                                <input type="text" id="form.id_sum" class="form-control" placeholder="Sum"
+                                       required
+                                       name="{{ form.sum.html_name }}">
+                                {{ form.sum.errors }}
+
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}
