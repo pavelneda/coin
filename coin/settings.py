@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'blogs.apps.BlogsConfig',
     'credits.apps.CreditConfig',
     'deposits.apps.DepositsConfig',
-    'exchange.apps.ExchangeConfig',
     'phonenumber_field',
 ]
 

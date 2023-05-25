@@ -1,12 +1,125 @@
-.authentification{
+.authentification {
     max-width: 50%;
     margin: 0 auto;
 }
 
-.authentification .errorlist{
+.authentification .errorlist {
     color: red;
 }
 
-.authentification .form-control{
+.authentification .form-control {
     margin-bottom: 0.5rem;
+}
+
+.logout {
+    color: red;
+}
+
+.account__card {
+    position: relative;
+    border-radius: 1rem;
+    background-color: black;
+    color: white;
+}
+
+#card-number {
+    font-size: 1.7rem;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#card-cvv {
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+}
+
+#card-date {
+    position: absolute;
+    left: 18%;
+    bottom: 15%;
+
+    font-size: 1.2rem;
+}
+
+.blur {
+    color: transparent;
+    text-shadow: 0 0 8px #000;
+    background-color: white;
+    border-radius: 25%;
+    cursor: pointer;
+}
+
+.blur:hover {
+    color: white;
+    text-shadow: none;
+    background-color: black;
+}
+
+
+#ajax-create-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.transfer form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.transfer form input {
+    margin: 10px 0;
+}
+
+.transfer__title {
+    text-align: center;
+}
+
+.box {
+    text-align: center;
+
+}
+
+.box select {
+    background-color: #fd7e14;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    border-radius: 30px;
+}
+
+.box select {
+    border-radius: 30px;
+}
+
+
+.box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+
+}
+
+.box select option {
+    padding: 30px;
+}
+
+.label_percent{
+    margin: 5px 0 0 ;
+}
+
+#formid_percent{
+    margin-top: 0;
+    pointer-events:none;
+}
+
+.deposit-table{
+    margin-top: 50px;
 }

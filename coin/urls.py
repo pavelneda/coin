@@ -7,12 +7,11 @@ from main.views import pageNotFound
 
 urlpatterns = [
     path('', include('main.urls')),
-    path('blogs/', include('blogs.urls')),
-    path('account/', include('account.urls')),
-    path('transfer/', include('transfer.urls')),
+    path('blogs/', include('blogs.urls'), name="blogs"),
+    path('account/', include('account.urls'), name="account"),
+    path('transfer/', include('transfer.urls'), name="transfer"),
     path('deposits/', include('deposits.urls')),
-    path('credits/', include('credits.urls')),
-    path('exchange/', include('exchange.urls')),
+    path('credits/', include('credits.urls'), name="credits"),
     path('admin/', admin.site.urls),
 ]
 
