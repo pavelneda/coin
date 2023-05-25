@@ -1,0 +1,99 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Coin - Deposit
+{% endblock %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}" type="text/css"/>
+    <section class="site-section">
+        <div class="container">
+            {% if request.user.is_authenticated %}
+                <div class="account">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="list-group list-group-light">
+                                <a href="{% url 'account' %}"
+                                   class="list-group-item list-group-item-action px-3 border-0"
+                                   aria-current="true">
+                                    Profile</a>
+                                <a href="{% url 'transfer' %}"
+                                   class="list-group-item list-group-item-action px-3 border-0 ">Transfer</a>
+                                <a href="#"
+                                   class="list-group-item list-group-item-action px-3 border-0 active">Deposit</a>
+                                <a href="{% url 'logout' %}"
+                                   class="logout list-group-item list-group-item-action px-3 border-0">Logout</a>
+                            </div>
+                        </div>
+                        <div class="transfer col-9">
+                            <h3 class="transfer__title">Deposits</h3>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+
+                                <label for="form.id_purpose" class="sr-only">Purpose</label>
+                                <input type="text" id="form.id_number-card" class="form-control"
+                                       name="{{ form.purpose.html_name }}"
+                                       placeholder="Purpose" required autofocus>
+                                {{ form.purpose.errors }}
+                                <label for="form.id_total" class="sr-only">Total</label>
+                                <input type="text" id="form.id_total" class="form-control" placeholder="Total"
+                                       required
+                                       name="{{ form.total.html_name }}">
+                                {{ form.total.errors }}
+
+                                <label for="form_id_term" class="sr-only">Term</label>
+                                <div class="box">
+                                    <select name="{{ form.term.html_name }}" id="form_id_term" class="form-select">
+                                        <option selected value="3">3 month</option>
+                                        <option value="6">6 month</option>
+                                        <option value="12">12 month</option>
+                                        <option value="24">24 month</option>
+                                    </select>
+                                </div>
+                                {{ form.term.errors }}
+
+                                <label for="formid_percent" class="label_percent">Percent:</label>
+                                <input type="text" id="formid_percent" class="form-control" placeholder="Percent"
+                                       required
+                                       name="{{ form.percent.html_name }}" value="15">
+                                {{ form.percent.errors }}
+
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Create deposit</button>
+
+
+                            </form>
+                        </div>
+
+                    </div>
+                    {% if deposits %}
+                    <table class="table  table-striped deposit-table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Purpose</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Term</th>
+                            <th scope="col">Percent</th>
+                            <th scope="col">Open date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for deposit in deposits %}
+                            <tr>
+                                <th scope="row">{{ deposit.purpose }}</th>
+                                <td>{{ deposit.total }}$</td>
+                                <td>{{ deposit.term }} month</td>
+                                <td>{{ deposit.percent }}%</td>
+                                <td>{{ deposit.data.day }}/{{ deposit.data.month }}/{{ deposit.data.year }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}
